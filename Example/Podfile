@@ -1,0 +1,13 @@
+use_frameworks!
+
+platform :ios, '9.0'
+
+target 'SGQRCoreKit_Example' do
+  pod 'SGQRCoreKit', :path => '../'
+
+  target 'SGQRCoreKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
