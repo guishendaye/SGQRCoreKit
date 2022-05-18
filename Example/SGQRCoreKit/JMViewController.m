@@ -7,6 +7,8 @@
 //
 
 #import "JMViewController.h"
+#import "SGQRCodeManager.h"
+#import "GJSecondViewController.h"
 
 @interface JMViewController ()
 
@@ -17,7 +19,22 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-	// Do any additional setup after loading the view, typically from a nib.
+    self.view.backgroundColor = [UIColor whiteColor];
+    UIButton *tempBtn = [[UIButton alloc] initWithFrame:CGRectMake(self.view.frame.size.width / 2 - 50, 300, 100, 60)];
+    [tempBtn setTitle:@"扫二维码" forState:UIControlStateNormal];
+    [tempBtn setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [tempBtn addTarget:self action:@selector(scanClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:tempBtn];
+}
+
+- (void)scanClick{
+    ///权限检查
+    __weak typeof(self) wself = self;
+    [[SGQRCodeManager sharedInstance] cameraAuthorizationBlock:^(GJSGAuthorizationStatus status) {
+        if (status == GJSGAuthorizationStatusSuccess) {
+            [wself.navigationController pushViewController:[GJSecondViewController new] animated:YES];
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning

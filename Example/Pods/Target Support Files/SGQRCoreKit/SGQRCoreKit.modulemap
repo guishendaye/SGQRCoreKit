@@ -1,0 +1,6 @@
+framework module SGQRCoreKit {
+  umbrella header "SGQRCoreKit-umbrella.h"
+
+  export *
+  module * { export * }
+}

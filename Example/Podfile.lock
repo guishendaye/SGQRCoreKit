@@ -1,0 +1,23 @@
+PODS:
+  - SGQRCode (3.5.1)
+  - SGQRCoreKit (0.1.0):
+    - SGQRCode (~> 3.5.1)
+
+DEPENDENCIES:
+  - SGQRCoreKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SGQRCode
+
+EXTERNAL SOURCES:
+  SGQRCoreKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SGQRCode: 65d6170ddcf3feecc6e2f3601aac78ad93e56589
+  SGQRCoreKit: f0466836a1b571431002ab05557220f519cd2a9a
+
+PODFILE CHECKSUM: d2a07f905c13f7b5865e8646ce38f0c0a7d5fac5
+
+COCOAPODS: 1.11.2

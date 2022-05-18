@@ -7,11 +7,16 @@
 //
 
 #import "JMAppDelegate.h"
+#import "JMViewController.h"
 
 @implementation JMAppDelegate
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
+    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+    UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:[JMViewController new]];
+    [self.window setRootViewController:nav];
+    [self.window makeKeyAndVisible];
     // Override point for customization after application launch.
     return YES;
 }
